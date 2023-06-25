@@ -34,7 +34,11 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+<<<<<<< HEAD
                               <Component id="ticketid" min="-2" pref="120" max="-2" attributes="0"/>
+=======
+                              <Component id="jTextField1" min="-2" pref="120" max="-2" attributes="0"/>
+>>>>>>> master
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -53,7 +57,11 @@
               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                   <Component id="ticketid" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> master
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
@@ -76,15 +84,22 @@
         <Property name="text" type="java.lang.String" value="Ticket ID"/>
       </Properties>
     </Component>
+<<<<<<< HEAD
     <Component class="javax.swing.JTextField" name="ticketid">
+=======
+    <Component class="javax.swing.JTextField" name="jTextField1">
+>>>>>>> master
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Get Ticket"/>
       </Properties>
+<<<<<<< HEAD
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
+=======
+>>>>>>> master
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
@@ -107,6 +122,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                               <Component id="firstname" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lastname" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
@@ -115,6 +131,16 @@
                                   <Component id="jLabel8" min="-2" pref="95" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="flightname" min="-2" max="-2" attributes="0"/>
+=======
+                              <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabel8" min="-2" pref="95" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+>>>>>>> master
                               </Group>
                           </Group>
                           <EmptySpace min="70" pref="16" max="32767" attributes="0"/>
@@ -125,9 +151,15 @@
                           </Group>
                           <EmptySpace pref="16" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                               <Component id="arrival" min="-2" max="-2" attributes="0"/>
                               <Component id="contact" min="-2" max="-2" attributes="0"/>
                               <Component id="departure" min="-2" max="-2" attributes="0"/>
+=======
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+>>>>>>> master
                           </Group>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
@@ -153,19 +185,32 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                               <Component id="firstname" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="arrival" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> master
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                                       <Component id="lastname" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="gender" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+=======
+                                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel14" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+>>>>>>> master
                                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -173,12 +218,20 @@
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                                       <Component id="departure" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                                      <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> master
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                                       <Component id="contact" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                                      <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> master
                                   </Group>
                               </Group>
                           </Group>
@@ -186,9 +239,15 @@
                       <Group type="102" attributes="0">
                           <Component id="jLabel10" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+<<<<<<< HEAD
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="flightname" min="-2" max="-2" attributes="0"/>
+=======
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> master
                           </Group>
                       </Group>
                   </Group>
@@ -299,7 +358,11 @@
             </Property>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="arrival">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel12">
+>>>>>>> master
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -310,7 +373,11 @@
             <Property name="text" type="java.lang.String" value="jLabel10"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="lastname">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel13">
+>>>>>>> master
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -321,7 +388,11 @@
             <Property name="text" type="java.lang.String" value="jLabel10"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="gender">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel14">
+>>>>>>> master
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -332,7 +403,11 @@
             <Property name="text" type="java.lang.String" value="jLabel10"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="flightname">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel15">
+>>>>>>> master
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -343,7 +418,11 @@
             <Property name="text" type="java.lang.String" value="jLabel10"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="firstname">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel16">
+>>>>>>> master
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -354,7 +433,11 @@
             <Property name="text" type="java.lang.String" value="jLabel10"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="departure">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel17">
+>>>>>>> master
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
@@ -365,7 +448,11 @@
             <Property name="text" type="java.lang.String" value="jLabel10"/>
           </Properties>
         </Component>
+<<<<<<< HEAD
         <Component class="javax.swing.JLabel" name="contact">
+=======
+        <Component class="javax.swing.JLabel" name="jLabel18">
+>>>>>>> master
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
