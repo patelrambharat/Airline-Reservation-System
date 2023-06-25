@@ -32,6 +32,10 @@ The GUI will be built using the Java Swing library.
 * Change text color to white
 * Align the panel in the middle
 
+![Image](addcustomer.png)
+
+# Add Flight Image
+![Image](addflight.png)
 # **Airline reservation system Admin and customer search**
 
 * Start building the add admin internal frame.
@@ -42,7 +46,10 @@ The GUI will be built using the Java Swing library.
 * Add text fields for admin ID, username, and password.
 * Adjust the length of the admin ID field.
 * Copy and paste the fields for username and password.
-
+#Admin Panel
+![Image](admin.png)
+#Customer Search
+![Image](searchcustomer.png)
 # **Airline reservation system Book ticket**
 * Completed admin panel, customer add flight login, mainframe, and search customer
 * Rename frame to "Book Ticket"
@@ -55,6 +62,9 @@ The GUI will be built using the Java Swing library.
 * Include message for searching flights based on arrival and departure
 * No X field present in the current section
 
+  #Book Ticket
+  ![Image](bookflight.png)
+
 # **Airline reservation system Designing of tables**
 * Importance of data structuring and creating a database
 * Introduction to MySQL Workbench
@@ -64,6 +74,9 @@ The GUI will be built using the Java Swing library.
 * Creating the customer table with nine columns: customer ID, first name, last name, passport number, national ID, address, contact number, gender, and date of birth
 * Explanation of using varchar for variable character size
 * Setting the size of the customer ID column as varchar(5)
+
+  #add flight
+  ![Image](addflight.png)
 
 # **Airline reservation system AutoID feature and DB connection**
 * Database tables created: admin, customer, flight, ticket.
@@ -81,7 +94,7 @@ The GUI will be built using the Java Swing library.
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/airline_project","root","admin");
 
-  
+![Image](printticket.png)  
      
 
   
