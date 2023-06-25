@@ -5,6 +5,14 @@
 package com.mycompany.airline_project;
 
 import static java.awt.Color.blue;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +26,32 @@ public class AddAdmin extends javax.swing.JInternalFrame {
     public AddAdmin() {
         initComponents();
         this.getContentPane().setBackground(blue);
+        AutoID();
+    }
+    
+     public void AutoID(){
+        try {
+            Connection con;   //Connection is a functionality called connection 
+            PreparedStatement pre; //prepare some queries
+            //connect with the database
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/airline_project","root","admin");
+            pre = con.prepareStatement("Select MAX(AdminID) from admin");
+            ResultSet rs = pre.executeQuery();
+            rs.next();       //initialize the result set
+            if(rs.getString("MAX(AdminID)") == null){
+                adminid.setText("AD001");
+            }
+            else{
+                long id = Long.parseLong(rs.getString("MAX(AdminID)").substring(2, rs.getString("MAX(AdminID)").length()));
+                id++;
+                adminid.setText("AD"+String.format("%03d", id));
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -34,13 +68,13 @@ public class AddAdmin extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        adminid = new javax.swing.JTextField();
+        firstname = new javax.swing.JTextField();
+        lastname = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        password = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -64,9 +98,9 @@ public class AddAdmin extends javax.swing.JInternalFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Admin ID");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        adminid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                adminidActionPerformed(evt);
             }
         });
 
@@ -78,15 +112,15 @@ public class AddAdmin extends javax.swing.JInternalFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Password");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                passwordActionPerformed(evt);
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                usernameActionPerformed(evt);
             }
         });
 
@@ -102,17 +136,17 @@ public class AddAdmin extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4))
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3))
+                    .addComponent(adminid, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                    .addComponent(firstname)
+                    .addComponent(lastname))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                    .addComponent(jTextField4))
+                    .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(password))
                 .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
@@ -121,27 +155,32 @@ public class AddAdmin extends javax.swing.JInternalFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminid, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                            .addComponent(firstname, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lastname, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(106, 106, 106))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jButton1.setText("Add");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancel");
 
@@ -182,20 +221,52 @@ public class AddAdmin extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void adminidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_adminidActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_passwordActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_usernameActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // TODO add your handling code here:
+            String AdminID = adminid.getText();
+            String FirstName = firstname.getText();
+            String LastName = lastname.getText();
+            String UserName = username.getText();
+            String Password = password.getText();
+            Connection con;
+            PreparedStatement pre;
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/airline_project","root","admin");
+            pre = con.prepareStatement("INSERT INTO admin (AdminID, FirstName, LastName, UserName, Password) VALUES (?,?,?,?,?)");
+            pre.setString(1, AdminID);
+            pre.setString(2, FirstName);
+            pre.setString(3, LastName);
+            pre.setString(4, UserName);
+            pre.setString(5, Password);
+
+            pre.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Admin Added Successfully");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField adminid;
+    private javax.swing.JTextField firstname;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -205,10 +276,8 @@ public class AddAdmin extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField lastname;
+    private javax.swing.JTextField password;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
